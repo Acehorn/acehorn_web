@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'router/router.dart';
 import 'theme/colors.dart';
-import 'ui/widgets/side_menu.dart';
-
 void main() {
   AppRouter.setupRouter();
   runApp(const AcehornApp());

@@ -1,4 +1,4 @@
-import 'package:acehornweb/ui/widgets/side_menu.dart';
+import 'package:acehornweb/ui/layout/main_layout.dart';
 import 'package:flutter/material.dart';
 
 class PageTemplate extends StatelessWidget {
@@ -10,13 +10,9 @@ class PageTemplate extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      endDrawer: const SideMenu(),
-      appBar: AppBar(
-        title: Text(title),
-        backgroundColor: Colors.red,
-      ),
-      body: Container(
+    return MainLayout(
+   
+      child: Container(
         color: color,
         alignment: Alignment.center,
         child: Text(
