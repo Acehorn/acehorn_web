@@ -8,7 +8,7 @@ class SideMenu extends StatelessWidget {
   const SideMenu({super.key});
 
   void _navigate(BuildContext context, String route) {
-    Navigator.pop(context); // Cierra el drawer si está abierto
+
     AppRouter.router.navigateTo(
       context,
       route,

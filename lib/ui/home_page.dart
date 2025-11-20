@@ -1,4 +1,9 @@
+import 'package:acehornweb/router/router.dart';
 import 'package:acehornweb/ui/layout/main_layout.dart';
+import 'package:acehornweb/ui/widgets/widget_section.dart';
+import 'package:acehornweb/ui/widgets/widget_section_about.dart';
+import 'package:acehornweb/ui/widgets/widget_section_music.dart';
+import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -21,31 +26,24 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: [
          
-            _section(height: 800, title: 'Home', color: Colors.black),
-            _section(height: 800, title: 'About', color: Colors.deepPurple.shade800),
-            _section(height: 800, title: 'Music', color: Colors.deepPurple.shade900),
-            _section(height: 800, title: 'Tour', color: Colors.indigo.shade900),
-            _section(height: 800, title: 'Contact', color: Colors.purple.shade700),
+           SectionWidget(title: 'Acehorn', backgroundImage: 'images/home_image.jpeg', isButton: false, color: Colors.black,),
+           MusicSectionWidget(title: 'Music', album1: 'images/albums/bewitched.jpg', album2: 'images/albums/saviours.jpg', isButton: true,  onTap: () => _navigate(context, '/music'), backgroundColor: Colors.white,),
+            SectionWidget(title: 'Contact', backgroundImage: 'images/contact_image.jpeg', isButton: true,  onTap: () => _navigate(context, '/contact'), color: Colors.black,),
+            SingleImageSectionWidget(title: 'About Me', image: 'images/about_image.jpeg',  isButton: true,  onTap: () => _navigate(context, '/about'), backgroundColor: Colors.white,),
           ],
         ),
       ),
     );
   }
 
-  Widget _section({
-    required double height,
-    required String title,
-    required Color color,
-  }) {
-    return Container(
-      height: height,
-      width: double.infinity,
-      color: color,
-      alignment: Alignment.center,
-      child: Text(
-        title,
-        style: const TextStyle(fontSize: 40, color: Colors.white),
-      ),
+
+  void _navigate(BuildContext context, String route) {
+    AppRouter.router.navigateTo(
+      context,
+      route,
+      transition: TransitionType.fadeIn,
+      replace: false,
     );
   }
+
 }
