@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
           children: [
          
            SectionWidget(title: 'Acehorn', backgroundImage: 'images/home_image.jpeg', isButton: false, color: Colors.black,),
-           MusicSectionWidget(title: 'Music', album1: 'images/albums/bewitched.jpg', album2: 'images/albums/saviours.jpg', isButton: true,  onTap: () => _navigate(context, '/music'), backgroundColor: Colors.white,),
+           MusicSectionWidget(title: 'Music', album1: 'images/about_image.jpeg', album2: 'images/about_image.jpeg', isButton: true,  onTap: () => _navigate(context, '/music'), backgroundColor: Colors.white,),
             SectionWidget(title: 'Contact', backgroundImage: 'images/contact_image.jpeg', isButton: true,  onTap: () => _navigate(context, '/contact'), color: Colors.black,),
             SingleImageSectionWidget(title: 'About Me', image: 'images/about_image.jpeg',  isButton: true,  onTap: () => _navigate(context, '/about'), backgroundColor: Colors.white,),
           ],
