@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'router/router.dart';
 import 'theme/colors.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
 void main() {
+   setUrlStrategy(PathUrlStrategy());
   AppRouter.setupRouter();
   runApp(const AcehornApp());
 }
