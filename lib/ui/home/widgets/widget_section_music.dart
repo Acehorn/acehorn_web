@@ -90,6 +90,7 @@ class _MusicSectionWidgetState extends State<MusicSectionWidget> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        
         _albums(),
         const SizedBox(height: 40),
         Text(
@@ -114,9 +115,9 @@ Widget _albums() {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        _albumCover(widget.album1, size: 180),
+        _albumCover(widget.album1, size: 160),
         const SizedBox(height: 20),
-        _albumCover(widget.album2, size: 180),
+        _albumCover(widget.album2, size: 160),
       ],
     );
   }

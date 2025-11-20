@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 
 class MainLayout extends StatefulWidget {
   final Widget child;
-  const MainLayout({super.key, required this.child});
+  final bool isMobileAndOtherPage;
+  const MainLayout({super.key, required this.child, this.isMobileAndOtherPage = false});
 
   @override
   State<MainLayout> createState() => _MainLayoutState();
@@ -22,7 +23,7 @@ class _MainLayoutState extends State<MainLayout> {
       body: Stack(
         children: [
           widget.child,
-          FloatingHeader(scaffoldKey: _scaffoldKey),
+          FloatingHeader(scaffoldKey: _scaffoldKey, isMobileAndOtherPage: widget.isMobileAndOtherPage,),
         ],
       ),
     );
