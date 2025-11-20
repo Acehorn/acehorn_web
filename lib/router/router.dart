@@ -1,3 +1,4 @@
+import 'package:acehornweb/router/not_found_page.dart';
 import 'package:acehornweb/ui/about/about_section.dart';
 import 'package:acehornweb/ui/contact/contact_section.dart';
 import 'package:acehornweb/ui/home/home_page.dart';
@@ -16,8 +17,13 @@ class AppRouter {
   static final Handler _contactHandler =
       Handler(handlerFunc: (context, params) => const ContactSection());
 
+  static final Handler _notFoundHandler =
+      Handler(handlerFunc: (context, params) => const NotFoundPage());
+
   static void setupRouter() {
-    router.define('/', handler: _homeHandler,);
+    router.notFoundHandler = _notFoundHandler;
+
+    router.define('/', handler: _homeHandler);
     router.define('/about', handler: _aboutHandler);
     router.define('/music', handler: _musicHandler);
     router.define('/contact', handler: _contactHandler);

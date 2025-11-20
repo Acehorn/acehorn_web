@@ -152,7 +152,6 @@ class AlbumDetailWidget extends StatelessWidget {
   }
 
   void openExternalLink(String url) {
-    print(url);
   launchUrl(
     Uri.parse(url),
     mode: LaunchMode.externalApplication, // Fuerza nueva pestaña en Web
