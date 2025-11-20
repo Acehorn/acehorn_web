@@ -8,7 +8,7 @@ class SideMenu extends StatelessWidget {
   const SideMenu({super.key});
 
   void _navigate(BuildContext context, String route) {
-
+Navigator.pop(context);
     AppRouter.router.navigateTo(
       context,
       route,
@@ -20,7 +20,7 @@ class SideMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: AppColors.accent.withValues(alpha: 0.95),
+      backgroundColor: AppColors.backgroundDark.withValues(alpha: 0.95),
       child: ListView(
         padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 16),
         children: [
@@ -34,11 +34,10 @@ class SideMenu extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 40),
-          _menuItem(context, 'Home', '/'),
-          _menuItem(context, 'About', '/about'),
+          _menuItem(context, 'Home', '/'), 
           _menuItem(context, 'Music', '/music'),
-          _menuItem(context, 'Tour', '/tour'),
           _menuItem(context, 'Contact', '/contact'),
+          _menuItem(context, 'About Me', '/about'),
         ],
       ),
     );

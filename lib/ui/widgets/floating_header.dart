@@ -18,13 +18,14 @@ class FloatingHeader extends StatelessWidget {
             'Acehorn',
             style: TextStyle(
               fontFamily: 'Old London',
-              fontSize: 36,
-              color: Colors.white,
+              fontSize: 40,
+
+              color: Color.fromRGBO(239, 151, 201, 1),
               letterSpacing: 2,
             ),
           ),
           IconButton(
-            icon: const Icon(Icons.menu, color: Colors.white, size: 30),
+            icon: const Icon(Icons.menu,       color: Color.fromRGBO(239, 151, 201, 1), size: 30),
             onPressed: () => scaffoldKey.currentState?.openEndDrawer(),
           ),
         ],

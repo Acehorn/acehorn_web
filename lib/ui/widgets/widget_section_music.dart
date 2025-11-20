@@ -107,35 +107,51 @@ class _MusicSectionWidgetState extends State<MusicSectionWidget> {
   }
 
   /// Muestra los dos álbumes estilo Spotify
-  Widget _albums() {
-    return Row(
+Widget _albums() {
+  final isMobile = MediaQuery.of(context).size.width < 900;
+
+  if (isMobile) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
-        _albumCover(widget.album1),
-        const SizedBox(width: 30),
-        _albumCover(widget.album2),
+        _albumCover(widget.album1, size: 180),
+        const SizedBox(height: 20),
+        _albumCover(widget.album2, size: 180),
       ],
     );
   }
 
+  // Desktop layout
+  return Row(
+    children: [
+      _albumCover(widget.album1),
+      const SizedBox(width: 30),
+      _albumCover(widget.album2),
+    ],
+  );
+}
+
+
   /// Cuadro individual de álbum
-  Widget _albumCover(String assetPath) {
-    return Container(
-      width: 250,
-      height: 250,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
-        image: DecorationImage(
-          image: AssetImage(assetPath),
-          fit: BoxFit.cover,
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.8),
-            blurRadius: 12,
-            offset: const Offset(0, 4),
-          ),
-        ],
+Widget _albumCover(String assetPath, {double size = 250}) {
+  return Container(
+    width: size,
+    height: size,
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(8),
+      image: DecorationImage(
+        image: AssetImage(assetPath),
+        fit: BoxFit.cover,
       ),
-    );
-  }
+      boxShadow: [
+        BoxShadow(
+          color: Colors.black.withValues(alpha: 0.25),
+          blurRadius: 12,
+          offset: const Offset(0, 4),
+        ),
+      ],
+    ),
+  );
+}
+
 }
