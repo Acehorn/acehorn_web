@@ -1,8 +1,8 @@
 import 'package:acehornweb/router/router.dart';
 import 'package:acehornweb/ui/layout/main_layout.dart';
-import 'package:acehornweb/ui/widgets/widget_section.dart';
-import 'package:acehornweb/ui/widgets/widget_section_about.dart';
-import 'package:acehornweb/ui/widgets/widget_section_music.dart';
+import 'package:acehornweb/ui/home/widgets/widget_section.dart';
+import 'package:acehornweb/ui/home/widgets/widget_section_about.dart';
+import 'package:acehornweb/ui/home/widgets/widget_section_music.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 

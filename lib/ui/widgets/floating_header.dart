@@ -20,7 +20,7 @@ class FloatingHeader extends StatelessWidget {
               fontFamily: 'Old London',
               fontSize: 40,
 
-              color: Color.fromRGBO(239, 151, 201, 1),
+             color: Color.fromRGBO(239, 151, 201, 1),
               letterSpacing: 2,
             ),
           ),
